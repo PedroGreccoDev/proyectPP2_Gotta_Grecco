@@ -1,0 +1,228 @@
+:root {
+    /* Paleta G&G Manager (Extraída de tus logos) */
+    --primary: #0A3622;         /* Verde oscuro (Fondo izquierdo y headers) */
+    --primary-dark: #062315;    /* Verde más oscuro para gradientes y sidebar */
+    --primary-light: #169B62;   /* Verde brillante (Botones y focos) */
+    --accent: #F4A024;          /* Ámbar (Links y detalles) */
+    
+    /* Colores del sistema */
+    --success: #198754;
+    --danger: #dc3545;
+    --warning: #f0ad4e;
+    --bg-light: #F3F4F6;        /* Gris claro (Fondo general del sistema) */
+    --text-dark: #1F2937;
+    --text-muted: #6B7280;
+    --border-color: #dee2e6;
+    --white: #ffffff;
+}
+
+* {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* ===== LOGIN / REGISTRO ===== */
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.auth-brand {
+    flex: 1.2;
+    background-color: var(--primary);
+    background-image: radial-gradient(circle at center, #0e452c 0%, var(--primary) 100%);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.brand-logo-container {
+    background-color: var(--white);
+    padding: 20px 30px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.brand-logo-horizontal {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+.brand-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.brand-text p {
+    color: rgba(255,255,255,0.85);
+    max-width: 320px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.auth-form-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-light);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.form-logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-logo-cuadrado {
+    width: 90px;
+    height: 90px;
+    border-radius: 22px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(10, 54, 34, 0.15);
+}
+
+.auth-card h2 {
+    text-align: center;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.custom-input {
+    border-radius: 10px;
+    padding: 12px 16px;
+    border: 1px solid #D1D5DB;
+    background-color: var(--white);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.custom-input:focus {
+    border-color: var(--primary-light);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(22, 155, 98, 0.15);
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 12px;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--primary-light);
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-auth:hover {
+    background-color: #128051;
+    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(22, 155, 98, 0.3);
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.link-muted {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.link-muted:hover {
+    color: var(--text-dark);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.link-accent {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.link-accent:hover {
+    filter: brightness(0.9);
+    text-decoration: underline;
+}
+
+/* ===== NAVBAR / SIDEBAR (para dashboard y módulos) ===== */
+.navbar-sistema {
+    background-color: var(--primary);
+}
+
+.navbar-sistema .nav-link {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+.navbar-sistema .nav-link:hover,
+.navbar-sistema .nav-link.active {
+    color: var(--white) !important;
+}
+
+.sidebar {
+    background-color: var(--primary-dark);
+    min-height: 100vh;
+    color: var(--white);
+}
+
+.sidebar a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    display: block;
+    padding: 10px 16px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: var(--primary-light);
+    color: var(--white);
+}
+
+/* ===== TABLAS (para listados de ventas, compras, etc.) ===== */
+.table thead {
+    background-color: var(--primary);
+    color: var(--white);
+}
