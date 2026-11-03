@@ -1,18 +1,24 @@
-<?php
+<?php 
 session_start();
+
+require_once '../../config/database.php';
 require_once '../../helpers/auth.php';
+require_once '../../helpers/funciones.php';
+require_once '../../helpers/funciones_proveedores.php';
+
 verificarSesion();
+
+$MiConexion = ConexionBD();
+
+$TituloPagina = 'Inicio';
+$MenuActivo = 'inicio';
+
+require '../layouts/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="p-4">
-    <h1>Bienvenido, <?php echo $_SESSION['Usuario_Nombre']; ?></h1>
-    <p>Sesión iniciada correctamente.</p>
-    <a href="../auth/logout.php" class="btn btn-danger">Cerrar sesión</a>
-</body>
-</html>
+
+<div class="panel-card">
+    <h1>Bienvenido, <?php echo Esc($_SESSION['Usuario_Nombre']); ?></h1>
+    <p class="text-muted mb-0">Sesión iniciada correctamente.</p>
+</div>
+
+<?php require '../layouts/footer.php'; ?>
